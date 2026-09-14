@@ -1,0 +1,13 @@
+{
+    "env": {
+        "ANTHROPIC_AUTH_TOKEN": "8f5fbe96c3664029801611d1c6e03687.qheXYoQC2IPUuZYL",
+        "ANTHROPIC_BASE_URL": "https://open.bigmodel.cn/api/anthropic",
+        "API_TIMEOUT_MS": "3000000",
+        "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
+        "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
+        "ANTHROPIC_DEFAULT_OPUS_MODEL": "glm-5.3[1M]"
+    },
+    "model": "glm-5.3[1M]",
+    "thinking": { "type": "enabled" },
+    "reasoning_effort": "max"
+}
