@@ -9,7 +9,7 @@ description: 备团时使用——新模组导入、场景切分、场景卡/NPC
 
 ## 开始前
 
-1. 确定 `campaign/<模组id>/`——模组 id 用英文小写下划线（如 `amaranthine_desire`），向 KP 确认
+1. 确定 `campaign/<模组id>/`——模组 id 用英文小写下划线（如 `不息的渴望`），向 KP 确认
 2. 提取模组全文（本机 Read 工具无法渲染 PDF，用已验证的 fitz 配方）：
 
 ```bash

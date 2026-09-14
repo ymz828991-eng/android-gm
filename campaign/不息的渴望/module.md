@@ -1,4 +1,4 @@
-# 不息的渴望（amaranthine_desire）
+# 不息的渴望（An Amaranthine Desire）
 
 ## 元信息
 - 作者：Matthew Sanderson（译：琳尼娜），出自 Nameless Horrors
