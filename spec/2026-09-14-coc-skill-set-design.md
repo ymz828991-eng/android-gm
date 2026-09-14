@@ -90,7 +90,7 @@ COC 文字跑团中，KP 的核心创作劳动：检定分层结果描述、场�
 | coc-pc-import | —（不改模组库） | 写 runs/<团>/pcs/ | — | — | 读 | — | — |
 | coc-producer | 读 | 读 | **追加** | **更新** | — | 读 | — |
 | coc-consumer | 读 | 读 | 读尾部 | 读全量 | 读 | 读 | — |
-| coc-harvest | — | — | 读 | — | **写** | — | **commit** |
+| coc-harvest | 写（收团模组修正，KP 确认） | — | 读 | — | **写** | — | **commit** |
 
 timeline/state 只有生产者写，corpus 只有 harvest 写，消费者全程只读。
 
@@ -194,7 +194,8 @@ coc_v2/
 1. 校验 timeline 完整性（编号连续、场次闭合）
 2. 从本场**实际产出**（timeline 正史，非草稿）挖语料：确认有效的新技法、入库高价值片段、补充文风样本
 3. 更新 corpus/ 与 INDEX.md
-4. `git commit`（本团一场一个存档点；state.md 误更新时可回滚）
+4. 模组修正：KP 口述本团发现的模组 bug 与即兴扩充 → 直接改模组库（场景/NPC/module/routes），标注团名；KP 本人任何时候也可手改。跑团中 skill 不写模组库，变化走 state，修正攒到收团（2026-09-15 修订）
+5. `git commit`（本团一场一个存档点；state.md 误更新时可回滚）
 
 ## 7. 四条工作流
 
