@@ -21,6 +21,6 @@
 之后读取切换为增量模式（state 全读 + timeline 尾部）。
 
 ## 文件协议（详见各 skill）
-- 布局：corpus/（语料）；campaign/<模组>/（**模组库**：scenes/npcs/drafts/module/routes，coc-prep 产出，跨团复用只读）；campaign/<模组>/runs/<团名>/（**一次开团**：pcs/timeline/state/recaps，团名用日期或你起的名）
+- 布局：corpus/（语料）；campaign/<模组>/（**模组库**：scenes/npcs/drafts/module/routes，coc-prep 产出，跨团复用只读）；campaign/<模组>/runs/<团名>/（**一次开团**：pcs/timeline/state/recaps/raw.md，团名用日期或你起的名；raw.md 是 **KP 终稿**的逐字底账——开团时记录 KP 发言标签，吸收时过滤归档，只增不改）
 - 单一写者：模组库写者 = prep（备团）+ harvest（收团"模组修正"，KP 确认）+ KP 本人（任何时候手改）；场景卡"PC 挂注"节永久留空，挂注活在各 run 的 PC 卡钩子里。**跑团进行中 skill 不写模组库**——变化走 state，修正攒到收团。timeline/state 只有生产者写；corpus 只有 harvest 写；消费者全程只读
 - timeline.md 只增不改；state.md 保持一屏以内
