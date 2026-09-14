@@ -28,7 +28,9 @@ description: 收团后沉淀语料时使用——校验timeline完整性，从�
 - 新条目同步更新 corpus/INDEX.md
 - 若本场的 KP 措辞反馈暴露了新的风格规律（如新的过渡词），更新文风锚点的统计节
 
-### 4. git 存档点
+### 4. 结团标记与 git 存档点
+
+- 整个模组完结（而非单场收束）时，在 state.md 标题行追加"（已完结）"——这是冷启动判断"未完结的团"的依据
 
 ```bash
 git add campaign/ corpus/ recaps/ 2>/dev/null; git commit -m "第N场存档点：<模组名>"
