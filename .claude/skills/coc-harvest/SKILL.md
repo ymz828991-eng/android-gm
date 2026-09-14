@@ -33,10 +33,10 @@ description: 收团后沉淀语料时使用——校验timeline完整性，从�
 - 整个模组完结（而非单场收束）时，在 state.md 标题行追加"（已完结）"——这是冷启动判断"未完结的团"的依据
 
 ```bash
-git add campaign/ corpus/ recaps/ 2>/dev/null; git commit -m "第N场存档点：<模组名>"
+git add campaign/ corpus/ && git commit -m "第N场存档点：<模组名>/<团名>"
 ```
 
-（campaign/ 的 timeline/state/recaps 与 corpus/ 的沉淀一并提交；上一场状态可在 git 历史中找回）
+（当前 run 的 pcs/timeline/state/recaps 与 corpus/ 的沉淀一并提交；上一场状态可在 git 历史中找回）
 
 ## 纪律
 

@@ -9,7 +9,7 @@ description: 跑团中吸收群聊发言时使用——KP粘贴群聊原文（�
 
 ## 第 0 步：冷启动（W0）
 
-会话开始时若 campaign/ 下有未完结的团：全量读该模组 state.md 与 timeline.md，游标复位（下一个事件号 = 当前最大编号 +1）。续团时另确认当前场次号（timeline 最后一个 `## 第N场` 节）。
+会话开始时扫描 campaign/*/runs/*/ 下未完结的 run（state.md 存在且无"已完结"标记）：选定一个（多个并存时列候选等 KP 选）后，全量读该 run 的 state.md 与 timeline.md，游标复位（下一个事件号 = 当前最大编号 +1）。续团时另确认当前场次号（timeline 最后一个 `## 第N场` 节）。KP 说"开新团"→ 确认模组与团名，创建 `campaign/<模组>/runs/<团名>/` 并初始化空的 timeline.md（`## 第1场` 节）与 state.md。
 
 ## 吸收协议（收到粘贴时）
 
@@ -40,7 +40,7 @@ description: 跑团中吸收群聊发言时使用——KP粘贴群聊原文（�
 
 ## 前情提要模式（续团时，KP 说"生成前情提要/续团"）
 
-基于 timeline + state 生成本场 recap → `campaign/<模组>/recaps/<日期>.md`：
+基于 timeline + state 生成本场 recap → `campaign/<模组>/runs/<团名>/recaps/<日期>.md`：
 
 - 面向玩家，300-500 字，**只含玩家可知**（线索台账内未标注 KP-only 的内容）
 - 按编年叙述，末尾留一个悬钩（当前进行到的事）

@@ -87,7 +87,7 @@ COC 文字跑团中，KP 的核心创作劳动：检定分层结果描述、场�
 | skill | scenes/npcs | pcs | timeline.md | state.md | corpus/ | drafts/ | git |
 |---|---|---|---|---|---|---|---|
 | coc-prep | 写（KP 校对） | — | — | 初始化 | 读 | 写 | — |
-| coc-pc-import | 挂注更新 | 写 | — | — | 读 | — | — |
+| coc-pc-import | —（不改模组库） | 写 runs/<团>/pcs/ | — | — | 读 | — | — |
 | coc-producer | 读 | 读 | **追加** | **更新** | — | 读 | — |
 | coc-consumer | 读 | 读 | 读尾部 | 读全量 | 读 | 读 | — |
 | coc-harvest | — | — | 读 | — | **写** | — | **commit** |
@@ -109,16 +109,17 @@ coc_v2/
     fragments/                ← 片段层（只收"写错即穿帮"类，随团生长）
       creatures/  scenes/
     文风锚点.md               ← KP 的节拍模式 + few-shot 样本（一次提取，可手工增删）
-  campaign/<模组id>/
+  campaign/<模组名>/
     module.md                 ← 元信息 + 真相摘要 + 伏笔登记表（编号供 timeline/state 引用）
     routes.md                 ← 理想路线：主线、关键节点、可跳过项
-    scenes/<id>.md            ← 场景卡
-    npcs/<id>.md              ← NPC 卡
-    pcs/<id>.md               ← PC 卡
+    scenes/<中文名>.md        ← 场景卡（"PC 挂注"节永久留空）
+    npcs/<中文名>.md          ← NPC 卡
     drafts/                   ← 预写稿（按场景组织）
-    timeline.md               ← 全团事件流水，## 场次分节，只增不改
-    state.md                  ← 当前态势，随时可重写
-    recaps/                   ← 每场前情提要
+    runs/<团名>/              ← 一次开团（同模组可多 run，2026-09-15 修订）
+      pcs/<PC名>.md           ← 本团 PC 卡（挂注钩子在此）
+      timeline.md             ← 本团事件流水，## 场次分节，只增不改
+      state.md                ← 本团当前态势，随时可重写
+      recaps/                 ← 本团每场前情提要
 ```
 
 ### 5.1 timeline.md 条目格式
@@ -197,7 +198,7 @@ coc_v2/
 
 ## 7. 四条工作流
 
-**W0 冷启动/加载**：任一会话开始时发现自己身在跑团中途 → load 协议（6.4 读取表冷启动行；消费者额外读 routes.md + 当前场景卡恢复方位感）。隔天续团 = W0 + 生产者前情提要模式 + timeline 开新 `## 场次` 分节。"模型恢复记忆"与"玩家恢复记忆"是两个动作，分属 W0 与生产者。
+**W0 冷启动/加载**：任一会话开始时扫描 campaign/*/runs/ 下未完结的 run（多个并存时列候选等 KP 选——同模组多次开团、同时多团均合法）→ load 协议（6.4 读取表冷启动行；消费者额外读 routes.md + 当前场景卡恢复方位感）。隔天续团 = W0 + 生产者前情提要模式 + timeline 开新 `## 场次` 分节。"模型恢复记忆"与"玩家恢复记忆"是两个动作，分属 W0 与生产者。
 
 **W1 备团**（一次性）：coc-prep 四步管线 → coc-pc-import 挂个人钩子。产出物 = 消费者的全部输入地基。
 

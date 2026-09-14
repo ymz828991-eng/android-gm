@@ -9,7 +9,7 @@ description: 跑团中生成剧情描述时使用——KP给出写作意图（"�
 
 ## 第 0 步：冷启动（W0）
 
-会话开始时若 campaign/ 下有未完结的团：全量读该模组 state.md 与 timeline.md，游标复位到 timeline 最新编号；另读 routes.md 与当前场景卡恢复方位感。之后切换为增量模式。
+会话开始时扫描 campaign/*/runs/*/ 下未完结的 run（state.md 存在且无"已完结"标记）：选定一个（多个并存时列候选等 KP 选）后，全量读该 run 的 state.md 与 timeline.md，游标复位到最新编号；另读该模组库的 routes.md 与当前场景卡恢复方位感。之后切换为增量模式。
 
 ## 读取协议（每次生成前）
 
@@ -22,8 +22,8 @@ description: 跑团中生成剧情描述时使用——KP给出写作意图（"�
 
 ## 装配顺序
 
-1. state.md 全量 + timeline.md（按上表）
-2. 按 KP 意图定位素材：场景卡（1-2 张，按意图指向的剧情段落）→ 在场 NPC 卡 → PC 卡（在场者）。
+1. 当前 run 的 state.md 全量 + timeline.md（按上表）
+2. 按 KP 意图定位素材（模组库 campaign/<模组>/）：场景卡（1-2 张，按意图指向的剧情段落）→ 在场 NPC 卡 → 当前 run 的 PC 卡（在场者）。
    **变体检查**：意图指向的场景若 timeline 显示曾到过（或为锚定场景），应用 corpus/techniques/节拍手法.md 的**重复事件变体法**——锚定句重现+差异独条（"一栋熟悉的磨坊"式）
 3. corpus/INDEX.md 按需取技法/片段（先查索引再读条目）
 4. 固定底座：corpus/techniques/写作纪律.md + corpus/文风锚点.md + campaign/<模组>/module.md 真相摘要
