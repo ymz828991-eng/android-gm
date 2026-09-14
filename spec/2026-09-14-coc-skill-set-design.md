@@ -65,7 +65,7 @@ COC 文字跑团中，KP 的核心创作劳动：检定分层结果描述、场�
 | Skill | 目录 | 触发时机 | 职责 | 读写权限 |
 |---|---|---|---|---|
 | coc-prep 备团 | `.claude/skills/coc-prep/` | 新模组，一次性 | 四步管线（见 6.1） | 写 scenes/ npcs/ module.md routes.md drafts/ |
-| coc-pc-import 玩家导入 | `.claude/skills/coc-pc-import/` | 开团前，每 PC 一次 | PC 背景 → 个人情节钩子 → PC 卡 + 场景挂注 | 写 pcs/，改 scenes/（挂注） |
+| coc-pc-import 玩家导入 | `.claude/skills/coc-pc-import/` | 开团前，每 PC 一次 | PC 背景 → 个人情节钩子 → PC 卡 + 场景挂注 | 写 runs/<团>/pcs/（挂注在 PC 卡，不改模组库） |
 | coc-producer 生产者 | `.claude/skills/coc-producer/` | 跑团中，KP 粘贴群聊原文时 | 吸收→提炼→落盘→简报（见 6.3）；另有"前情提要"模式 | 追加 timeline.md，更新 state.md，其余只读 |
 | coc-consumer 消费者 | `.claude/skills/coc-consumer/` | 跑团中，KP 给出写作意图时 | 读取协议→装配→生成→自检→呈现草稿（见 6.4） | campaign/ 全部只读 |
 | coc-harvest 收团沉淀 | `.claude/skills/coc-harvest/` | 收团后，一次 | 完整性校验→语料沉淀→git commit 存档点 | 写 corpus/，读 timeline，git commit |
@@ -145,7 +145,7 @@ coc_v2/
 
 ### 5.3 场景卡 / NPC 卡内容清单
 
-- **场景卡**：场景原文 + 浓缩摘要 + box_texts（标记"只可原文引用"）+ 出入口 + 在场 NPC 引用 + PC 挂注（导入时写入）
+- **场景卡**：场景原文 + 浓缩摘要 + box_texts（标记"只可原文引用"）+ 出入口 + 在场 NPC 引用 + PC 挂注节（永久留空，挂注活在各 run 的 PC 卡）
 - **NPC 卡**：声线卡（外貌、特质、扮演秘诀、动机）+ 知情边界；数值表仅留引用不进上下文
 
 ## 6. 协议细节

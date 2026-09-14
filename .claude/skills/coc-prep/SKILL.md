@@ -17,7 +17,7 @@ description: 备团时使用——新模组导入、场景切分、场景卡/NPC
 python -c "
 import fitz, sys
 doc = fitz.open('<模组PDF路径>')
-with open('logs/extracted/_<模组id>_mod.txt', 'w', encoding='utf-8') as f:
+with open('logs/extracted/_<模组名>_mod.txt', 'w', encoding='utf-8') as f:
     for i, page in enumerate(doc):
         f.write(f'\n===== 第{i+1}页 =====\n' + page.get_text())
 print(len(doc), '页')
@@ -31,7 +31,7 @@ print(len(doc), '页')
 ### 步骤 1：场景切分
 
 - 按模组的场景边界（标题、地点转换、"读出"段落间隔）把全文切分为场景列表
-- 每个场景产出骨架文件 `campaign/<模组名>scenes/<中文名>.md`（如 `磨坊.md`、`进城之路.md`，与卡片标题同名；卡片间交叉引用一律用此名）
+- 每个场景产出骨架文件 `campaign/<模组名>/scenes/<中文名>.md`（如 `磨坊.md`、`进城之路.md`，与卡片标题同名；卡片间交叉引用一律用此名）
 - **box text 识别规则**：模组中标注"读出/朗读/box/玩家用"的段落，或成段的环境描写成品文字，整段摘录进场景卡的 `box_texts` 节——这些**只可原文引用，不得改写**
 - 线性模组在卡内"出入口"字段写 order 链；箱庭模组写场景网（多出口指向）
 
@@ -51,7 +51,7 @@ print(len(doc), '页')
 ## PC 挂注（coc-pc-import 写入，初始为空）
 ```
 
-每个有声线的 NPC 写 `campaign/<模组名>npcs/<中文名>.md`（与 NPC 名同名）：
+每个有声线的 NPC 写 `campaign/<模组名>/npcs/<中文名>.md`（与 NPC 名同名）：
 
 ```markdown
 # <NPC 名>
@@ -68,7 +68,7 @@ print(len(doc), '页')
 
 ### 步骤 3：真相摘要 + 理想路线
 
-`campaign/<模组名>module.md`：
+`campaign/<模组名>/module.md`：
 
 ```markdown
 # <模组名>（<模组id>）
@@ -80,7 +80,7 @@ print(len(doc), '页')
 | F1 | …… | 第N场/某场景 |
 ```
 
-`campaign/<模组名>routes.md`：
+`campaign/<模组名>/routes.md`：
 
 - **主线序**：场景的理想推进顺序
 - **关键节点**：错过即坏局的节点（预写稿据此选取）+ 每个节点的回拉手段（若玩家绕开，从哪里把线索再递一次）
@@ -90,7 +90,7 @@ print(len(doc), '页')
 
 ### 步骤 4：预写稿
 
-`campaign/<模组名>drafts/<场景id>.md`，依 routes.md 的关键节点选取：
+`campaign/<模组名>/drafts/<场景id>.md`，依 routes.md 的关键节点选取：
 
 - 每场景**开场白**一份（box_texts 原文 + 到场节拍连发，遵循 corpus/文风锚点.md 的节拍模式）
 - 关键检定的**成败两版**描述（遵循 corpus/techniques/写作纪律.md 的检定分层描述法）
