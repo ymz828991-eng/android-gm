@@ -5,3 +5,4 @@ logs/
 *.docx
 logs/extracted/
 .superpowers/
+.claude/settings.*
