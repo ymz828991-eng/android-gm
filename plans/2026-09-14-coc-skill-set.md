@@ -333,7 +333,7 @@ git add .claude/skills/coc-pc-import/ campaign/amaranthine_desire/pcs/ && git co
   6. **自检清单**（呈现前逐项过）：是否点破因果（剧透）？box text 是否原文？NPC 是否越知情边界？节拍形态是否符合文风锚点？
   7. **反馈循环**：KP 指出第 N 条问题 → 仅重生成该条及受影响条
   8. **防呆**：收到群聊原文粘贴 → "我是消费者，请到生产者窗口"；发现 timeline 断号 → 提醒先喂生产者；**对 campaign/ 零写入**
-- [ ] **Step 2: 搭建回放环境**：从 `logs/extracted/2再见.txt` 选一段含"场景到场+一次检定"的 10-20 条 KP 连发片段；从该片段之前的日志手工重建 `campaign/amaranthine_desire/state.md` 与 `timeline.md`（写到片段前一刻，标注文件头"回放测试用，第2场中途"）——这是测试脚手架，KP 终稿即"正史"来源
+- [ ] **Step 2: 搭建回放环境**：从 `logs/extracted/2再见.txt` 选一段含"场景到场+一次检定"的 10-20 条 KP 连发片段；从该片段之前的日志手工重建脚手架 `docs/replays/scaffold/amaranthine/state.md` 与 `timeline.md`（写到片段前一刻，文件头标注"回放测试用，第2场中途"）。脚手架入库；回放执行时将副本临时放入 `campaign/amaranthine_desire/`，测试结束删除副本（campaign/ 不留测试状态）
 - [ ] **Step 3: 执行回放**：以当时 KP 实际作为意图输入（从上文反推），跑消费者协议生成节拍
 - [ ] **Step 4: 写测试报告** `docs/replays/2026-09-14-首次回放.md`：生成的节拍全文 + 当年 KP 原文 + 四维评分（贴合模组/文风/节拍形态/剧透控制，各 1-5 分 + 一句理由）+ 失败模式记录
 - [ ] **Step 5: 【KP校对】** 用户读报告，判定是否达到可用线（总分≥14/20 且无剧透翻车）；未达标则按失败模式修 SKILL.md 或语料后重跑（此循环预期 1-3 轮）
@@ -360,8 +360,8 @@ git add .claude/skills/coc-consumer/ docs/replays/ && git commit -m "feat: coc-c
   3. **前情提要模式**：续团时基于 timeline+state 生成 recaps/<日期>.md（面向玩家的 300-500 字，只含玩家可知）
   4. **防呆**：收到写作意图 → "我是生产者，请到消费者窗口"；无法识别说话人时列出候选问 KP
   5. 尾部三条铁律 + "timeline 只增不改；state 一屏以内"
-- [ ] **Step 2: 吸收回放验证**：把 `logs/extracted/1初见.txt` 开场 40 条（导入段+石滩段）作为粘贴输入跑吸收协议；检查：timeline 条目编号连续、每条≤30字、KP 的导入段被正确标为正史；state.md 生成后五节齐全且一屏内
-- [ ] **Step 3: 清理**：验证产物写入 `docs/replays/2026-09-14-生产者验证.md` 留档；把验证用的 timeline/state 恢复为回放脚手架状态（git checkout）
+- [ ] **Step 2: 吸收回放验证**：将 `docs/replays/scaffold/amaranthine/` 副本临时放入 `campaign/amaranthine_desire/`，把 `logs/extracted/1初见.txt` 开场 40 条（导入段+石滩段）作为粘贴输入跑吸收协议；检查：timeline 条目编号连续、每条≤30字、KP 的导入段被正确标为正史；state.md 生成后五节齐全且一屏内
+- [ ] **Step 3: 清理**：验证产物写入 `docs/replays/2026-09-14-生产者验证.md` 留档；删除放入 campaign/ 的脚手架副本
 - [ ] **Step 4: Commit**
 
 ```bash

@@ -1,0 +1,7 @@
+ref/
+mods/
+logs/
+*.pdf
+*.docx
+logs/extracted/
+.superpowers/
