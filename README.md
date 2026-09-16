@@ -32,7 +32,7 @@ AI 辅助的《克苏鲁的呼唤》（COC）KP 工作台。没有代码，全�
    - **拓展探测** — 备团步骤 5（同上下文）调用 [coc-expand](.claude/skills/coc-expand/SKILL.md)：按四类十六条规则对**模组原文**体检（卡关风险／深挖潜力／手稿机会／节奏结构），产出 expand.md 清单。只探测不代工——KP 点选条目（如"生成 A1-1"）才生成补线、多解方案、高密度手稿、NPC 深化、场景细节；已备模组随时可单独补探测
 2. **导入 PC** — [coc-pc-import](.claude/skills/coc-pc-import/SKILL.md)：结合模组真相与场景卡，为每个 PC 生成个人情节钩子
 3. **开团**（生产者 + 消费者双会话并行）
-   - 粘贴群聊原文 → [coc-producer](.claude/skills/coc-producer/SKILL.md)：timeline 只增不改，state 保持一屏以内
+   - 粘贴群聊原文 → [coc-producer](.claude/skills/coc-producer/SKILL.md)：timeline 只增不改，state 保持一屏以内；简报后附**局势研判**（事态/断线/偏航/伏笔温度/下一步建议，对照 module/routes/expand，只进会话不落盘）
    - 写作意图 → [coc-consumer](.claude/skills/coc-consumer/SKILL.md)：按读取协议装配上下文，产出节拍式描述草稿
 4. **收团** — [coc-harvest](.claude/skills/coc-harvest/SKILL.md)：校验 timeline 完整性，从正史挖语料入库，git commit 存档
 
